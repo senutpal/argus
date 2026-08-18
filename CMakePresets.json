@@ -1,0 +1,46 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "gcc-release",
+      "displayName": "GCC (Release + Ninja)",
+      "description": "Optimized release build using GCC with Ninja",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "g++",
+        "ARGUS_BUILD_BENCHMARKS": "ON"
+      }
+    },
+    {
+      "name": "gcc-debug",
+      "displayName": "GCC (Debug + Ninja)",
+      "description": "Debug build using GCC with Ninja",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_COMPILER": "g++",
+        "ARGUS_BUILD_BENCHMARKS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "gcc-release",
+      "configurePreset": "gcc-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "gcc-debug",
+      "configurePreset": "gcc-debug",
+      "configuration": "Debug"
+    }
+  ]
+}
