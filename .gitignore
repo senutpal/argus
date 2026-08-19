@@ -1,0 +1,25 @@
+# Build directories
+build/
+bin/
+lib/
+out/
+
+# CMake artifacts
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+
+# Compiled outputs
+*.obj
+*.o
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+*.exe
+
+# IDE / Editor artifacts
+.vs/
+.vscode/
+.idea/
